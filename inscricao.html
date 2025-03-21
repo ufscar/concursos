@@ -1,0 +1,16 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <script>
+            function go() {
+                document.getElementById('idCargo').value = window.location.search.substring(1);
+                document.getElementById('form').submit();
+            }
+        </script>
+    </head>
+    <body onload="go()">
+        <form id="form" method="POST" action="https://concursos.ufscar.br/inscricao.php">
+            <input type="hidden" id="idCargo" name="idCargo" />
+        </form>
+    </body>
+</html>
