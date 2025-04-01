@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <script>
+            function go() {
+                let params = window.location.search.substring(1).split('&');
+                document.getElementById('idArquivo').value = params[0];
+                document.getElementById('versao').value = params.length > 1 ? params[1] : '1';
+                document.getElementById('form').submit();
+            }
+        </script>
+    </head>
+    <body onload="go()">
+        <form id="form" method="POST" action="https://concursos.ufscar.br/arquivo.php">
+            <input type="hidden" id="idArquivo" name="idArquivo" />
+            <input type="hidden" id="versao" name="versao" />
+        </form>
+    </body>
+</html>
